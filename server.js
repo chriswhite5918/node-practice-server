@@ -37,9 +37,9 @@ app.use((req, res, next) => {
 });
 
 // Use maintenance middleware
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs');
+// });
 
 // Static public dir
 app.use(express.static(__dirname + '/public'));
@@ -62,6 +62,13 @@ app.get('/about', (req, res) => {
   // res.send('About Page');
   res.render('about.hbs', {
     pageTitle: 'About Page'
+  });
+});
+
+// Project
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects'
   });
 });
 
